@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramón Sánchez Baquedano</title>
+<meta name="description" content="AI engineer working on large language models, multi-agent systems and vision models. Santiago, Chile.">
+<meta property="og:title" content="Ramón Sánchez Baquedano">
+<meta property="og:description" content="AI engineer working on large language models, multi-agent systems and vision models.">
+<meta property="og:image" content="assets/poster.jpg">
+<meta name="theme-color" content="#11173A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Crect width='4' height='4' fill='%2311173A'/%3E%3Crect x='1' y='1' width='2' height='2' fill='%23E8B92F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --ground: #11173A;
+  --ink: #EDE1BC;
+  --muted: #A3A8C6;
+  --rule: #283062;
+  --underline: #3A4378;
+  --accent: #E8B92F;
+}
+* { box-sizing: border-box; }
+html { background: var(--ground); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ground);
+  color: var(--ink);
+  font: 14px/1.75 "JetBrains Mono", ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+a:hover, a:focus-visible { color: var(--accent); text-decoration-color: var(--accent); }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 28px;
+  padding: 40px 16px 0;
+  font-size: 13px;
+}
+nav a { text-decoration: none; color: var(--muted); }
+nav a:first-child { color: var(--ink); }
+.column { width: 100%; max-width: 632px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+main { display: flex; flex-direction: column; gap: 56px; padding-top: 120px; }
+h1, h2, p { margin: 0; }
+h1 { font-size: 14px; font-weight: 500; margin-bottom: 12px; }
+h2 { font-size: 14px; font-weight: 400; color: var(--muted); margin-bottom: 12px; }
+.muted { color: var(--muted); }
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.rows li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.rows .note { flex: 1 0 100%; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding-top: 72px;
+  padding-bottom: 32px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.art {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+  margin-top: auto;
+  object-fit: cover;
+  object-position: 85% 100%;
+  /* the video is drawn on black; screen blending turns black into the page blue */
+  mix-blend-mode: screen;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  main { padding-top: 72px; }
+  /* crop toward the cypress so the pixels stay big enough to read */
+  .art { min-height: 380px; }
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+<a href="#work">work</a>
+<a href="#experience">experience</a>
+<a href="cv.pdf">cv</a>
+</nav>
+
+<main class="column">
+
+<section>
+<h1>Hi, I'm Ramón.</h1>
+<p>AI engineer working on large language models, multi-agent systems and vision models.</p>
+<p>Research Associate @ <a href="https://www.uc.cl/">PUC Chile</a> and AI Engineer @ Streamdata.</p>
+<p>Before that, <a href="https://www.ceps.eu/">CEPS</a> in Brussels and AI research @ <a href="https://www.udec.cl/">UdeC</a>.</p>
+<p>Currently, using LLMs to study how children and ultra-processed food show up on social media.</p>
+</section>
+
+<section id="work">
+<h2>selected work</h2>
+<ul class="rows">
+<li><span>Ultra-processed food on social media</span><span class="muted">2026</span><span class="note">Multi-agent pipelines over 30,000+ videos and 100,000+ frames, with confidence-weighted voting for reliable labels.</span></li>
+<li><span>Hierarchical memory for agents</span><span class="muted">2026</span><span class="note">Agent memory, report automation and data exploration for onboarding at Streamdata.</span></li>
+<li><span>Mapping AI research and startups</span><span class="muted">2025</span><span class="note">LLMs, OCR and scraping to map NeurIPS research and venture-backed AI startups for CEPS.</span></li>
+<li><span>LLMs to create and stress public policy</span><span class="muted">2026</span><span class="note">Undergraduate thesis with an economic complexity approach. Graded 7.0 / 7.0.</span></li>
+</ul>
+</section>
+
+<section id="experience">
+<h2>experience</h2>
+<ul class="rows">
+<li><span>Research Associate @ PUC Chile</span><span class="muted">2026 – now</span></li>
+<li><span>AI Engineer @ Streamdata</span><span class="muted">2026 – now</span></li>
+<li><span>Data Scientist Intern @ AI World / CEPS</span><span class="muted">2025 – 2026</span></li>
+<li><span>Research Fellow in AI @ UdeC</span><span class="muted">2025</span></li>
+<li><span>BSc Industrial Engineering @ UdeC</span><span class="muted">2021 – 2026</span></li>
+</ul>
+</section>
+
+<section>
+<h2>elsewhere</h2>
+<div class="links">
+<a href="https://github.com/rasabaq">github</a>
+<a href="https://www.linkedin.com/in/ramonsanchezbaquedano">linkedin</a>
+<a href="mailto:ra.sanchez.baq@gmail.com">email</a>
+<a href="cv.pdf">cv</a>
+</div>
+</section>
+
+</main>
+
+<footer class="column">
+<span>© 2026 Ramón Sánchez Baquedano</span>
+<span>after Vincent van Gogh, Wheat Field with Cypresses, 1889</span>
+</footer>
+
+<video class="art" src="assets/vangogh.mp4" poster="assets/poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Animated pixel version of Van Gogh's Wheat Field with Cypresses: golden wheat sways, the cypress flickers and stars twinkle over a night-blue sky."></video>
+
+<script>
+// Respect people who ask their system for less motion: show the still frame instead.
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const v = document.querySelector(".art");
+  v.removeAttribute("autoplay");
+  v.pause();
+}
+</script>
+</body>
+</html>
