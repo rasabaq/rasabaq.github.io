@@ -95,6 +95,8 @@ footer {
   mix-blend-mode: screen;
   pointer-events: none;
 }
+/* cursor trail; sits above the painting and below the text */
+.sparks { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 @media (max-width: 600px) {
   main { padding-top: 48px; }
 }
@@ -161,6 +163,7 @@ footer {
 </footer>
 
 <video class="art" src="assets/vangogh.mp4" poster="assets/poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Animated pixel version of Van Gogh's Wheat Field with Cypresses: golden wheat sways, the cypress flickers and stars twinkle over a night-blue sky."></video>
+<canvas class="sparks" aria-hidden="true"></canvas>
 
 <script>
 // Highlight the open tab in the nav.
@@ -176,6 +179,66 @@ if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
   const v = document.querySelector(".art");
   v.removeAttribute("autoplay");
   v.pause();
+}
+
+// The cursor leaves a trail of twinkling pixel stars, like the ones in the painting's sky.
+// Only for mouse and trackpad users who have not asked for less motion.
+if (matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)").matches) {
+  const canvas = document.querySelector(".sparks");
+  const ctx = canvas.getContext("2d");
+  const PX = 4; // size of one star pixel, in CSS px
+  const LIFE = 900; // ms a star lives
+  const colors = ["#E8B92F", "#EDE1BC", "#F4D774"];
+  let stars = [];
+  let running = false;
+  let last = 0;
+
+  function resize() {
+    canvas.width = innerWidth * devicePixelRatio;
+    canvas.height = innerHeight * devicePixelRatio;
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  }
+  resize();
+  addEventListener("resize", resize);
+
+  addEventListener("pointermove", e => {
+    for (let i = 0; i < 2; i++) stars.push({
+      x: e.clientX + (Math.random() - 0.5) * 20,
+      y: e.clientY + (Math.random() - 0.5) * 20,
+      age: 0,
+      big: Math.random() < 0.25,
+      color: colors[Math.random() * colors.length | 0],
+    });
+    if (!running) {
+      running = true;
+      last = performance.now();
+      requestAnimationFrame(draw);
+    }
+  });
+
+  function draw(now) {
+    const dt = Math.max(0, now - last);
+    last = now;
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    for (const s of stars) {
+      s.age += dt;
+      s.y -= dt * 0.02; // drift up slowly
+      ctx.globalAlpha = Math.max(0, 1 - s.age / LIFE) * (0.5 + 0.5 * Math.random());
+      ctx.fillStyle = s.color;
+      const x = Math.round(s.x / PX) * PX, y = Math.round(s.y / PX) * PX;
+      ctx.fillRect(x, y, PX, PX);
+      // a quarter of the stars get a little cross, so they read as stars
+      if (s.big) {
+        ctx.fillRect(x - PX, y, PX * 3, PX);
+        ctx.fillRect(x, y - PX, PX, PX * 3);
+      }
+    }
+    stars = stars.filter(s => s.age < LIFE);
+    // stop the loop when nothing is left, so the page stays idle
+    running = stars.length > 0;
+    if (running) requestAnimationFrame(draw);
+    else ctx.clearRect(0, 0, innerWidth, innerHeight);
+  }
 }
 </script>
 </body>
