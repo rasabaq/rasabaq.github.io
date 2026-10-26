@@ -1,0 +1,128 @@
+# Source of cv.pdf. Edit this file, then run:
+#   uvx --from 'rendercv[full]' rendercv render cv.yaml
+cv:
+  name: Ramón Sánchez Baquedano
+  location: Chile
+  email: ra.sanchez.baq@gmail.com
+  social_networks:
+    - network: LinkedIn
+      username: ramonsanchezbaquedano
+  sections:
+    summary:
+      - AI Engineer specialized in Large Language Models, multi-agent system architecture, and vision models (segmentation, OCR). Experienced in building agentic frameworks for report automation and academic applications, with additional interest in economic complexity.
+    experience:
+      - company: CDIA (Centro de Datos e Inteligencia Artificial, UdeC)
+        position: AI Engineer
+        start_date: 2026-09
+        end_date: present
+        location: Concepción, Chile
+        highlights:
+          - '**Python | LLMs | AI Agents | MCP**'
+          - Developing AI solutions in projects with industry partners.
+          - Building MCP (Model Context Protocol) servers that connect AI agents to tools and data.
+          - Researching agent harnesses for cybersecurity and agents for data collection.
+      - company: Pontificia Universidad Católica de Chile
+        position: Research Assistant
+        start_date: 2026-08
+        end_date: present
+        location: Santiago, Chile
+        highlights:
+          - '**Python | LLMs | Vision Models | Social Media Data**'
+          - Project funded by the [Research for Innovative Food Policy Fund](https://www.globalfoodresearchprogram.org/2026-research-for-innovative-food-policy-fund-recipients/) of the UNC Global Food Research Program.
+          - Conducting research using large language models to identify child behavior associated with ultra-processed food on social media.
+          - Processed over 30,000 social media videos and more than 100,000 frames through multi-agent pipelines.
+          - Developed self-consistency and confidence-weighted voting workflows to improve labeling reliability.
+      - company: Streamdata
+        position: AI Engineer
+        start_date: 2026-04
+        end_date: 2026-07
+        location: Concepción, Chile
+        highlights:
+          - '**Python | Django | LLMs | Docker | Coolify**'
+          - Developed automation of predefined reports.
+          - Developed hierarchical memory for agents.
+          - Built a feature for data exploration and analysis to support onboarding processes.
+      - company: Universidad de Concepción
+        position: Research Fellow in Artificial Intelligence
+        start_date: 2025-04
+        end_date: 2025-12
+        location: Concepción, Chile
+        highlights:
+          - '**Python | LLMs**'
+          - Developing and researching a project to make the academic journey easier for students, using large language models and building different frameworks with data from the university.
+      - company: Streamdata
+        position: GenAI Intern
+        start_date: 2025-12
+        end_date: 2026-02
+        location: Concepción, Chile
+        highlights:
+          - '**Python | Django | LLMs**'
+          - Improved AI agent reliability and task performance by closing the semantic gap and building self-learning loops from tool and data ecosystems.
+      - company: AI World / CEPS (Centre for European Policy Studies)
+        position: Data Scientist Intern
+        start_date: 2025-09
+        end_date: 2026-01
+        location: Brussels, Belgium
+        highlights:
+          - '**Python | Pandas | LLMs | OCR | Web Scraping**'
+          - Mapped startups and scientific research in artificial intelligence, sourced from conferences such as NeurIPS and from multiple venture capital firms.
+          - Consolidated data using LLMs, OCR, and scraping tools for data collection within the Data Science Unit at CEPS.
+      - company: Universidad de Concepción
+        position: Teaching Assistant in Multivariate Statistical Analysis
+        start_date: 2025-03
+        end_date: 2025-07
+        location: Concepción, Chile
+        highlights:
+          - '**Python | Scikit-learn**'
+          - Conducted practical sessions covering data manipulation exercises and regression models in Python.
+      - company: Universidad de Concepción
+        position: Teaching Assistant in Multivariate Statistical Analysis
+        start_date: 2024-03
+        end_date: 2024-07
+        location: Concepción, Chile
+        highlights:
+          - '**Python | Scikit-learn**'
+          - Conducted practical sessions including applied analysis such as linear regression, factor analysis, and discriminant analysis.
+      - company: Technovation Girls Chile
+        position: Project Tutor
+        start_date: 2023-01
+        end_date: 2023-02
+        location: Concepción, Chile
+        highlights:
+          - Guided and supported girls between 5 and 10 years old in developing projects focused on creating value through technological tools in education.
+    education:
+      - institution: Universidad de Concepción
+        area: Industrial Engineering
+        degree: BSc
+        start_date: 2021-03
+        end_date: 2026-07
+        location: Concepción, Chile
+        highlights:
+          - '**Thesis:** Use of Large Language Models to Create and Stress Public Policy: An Economic Complexity Approach.'
+          - Awarded the maximum grade (7.0/7.0) for the thesis.
+design:
+  theme: classic
+  page:
+    top_margin: 0.8cm
+    bottom_margin: 0.9cm
+    left_margin: 1cm
+    right_margin: 1cm
+  colors:
+    name: rgb(0, 0, 0)
+    headline: rgb(0, 0, 0)
+    connections: rgb(0, 0, 0)
+    section_titles: rgb(0, 0, 0)
+    links: rgb(0, 0, 0)
+  typography:
+    font_size:
+      body: 9pt
+      name: 22pt
+  sections:
+    space_between_regular_entries: 0.5em
+settings:
+  current_date: today
+  render_command:
+    pdf_path: cv.pdf
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_png: true

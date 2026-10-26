@@ -5,6 +5,8 @@ Personal page of Ramón Sánchez Baquedano. One static HTML file, no build step.
 - `index.html`: the page.
 - `assets/vangogh.mp4`: an 8-second looping pixel animation, after Vincent van Gogh's *Wheat Field with Cypresses* (1889, public domain).
 - `assets/poster.jpg`: the first frame, shown while the video loads and for visitors who prefer reduced motion.
+- `cv.yaml`: the CV's text. To rebuild `cv.pdf` after editing it, run `uvx --from 'rendercv[full]' rendercv render cv.yaml`.
 - `cv.pdf`: CV.
+- `CNAME`: custom domain for GitHub Pages (ramonsanchez.xyz).
 
 To preview locally, open `index.html` in a browser.
